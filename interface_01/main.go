@@ -1,35 +1,36 @@
+// we have to pass pointer to the interface
 package main
 
 import (
 	"fmt"
 )
 
-type cat struct {
+type Cat struct {
 	name string
 }
 
-func (c *cat) updateName() {
+func (c *Cat) updateName() {
 	c.name = "cat updated"
 }
 
-type dog struct {
+type Dog struct {
 	name string
 }
 
-func (d *dog) updateName() {
+func (d *Dog) updateName() {
 	d.name = "dog updated"
 }
 
-type animal interface {
+type Animal interface {
 	updateName()
 }
 
 func main() {
-	c := cat{name: "cat"}
+	c := Cat{name: "cat"}
 
-	d := dog{name: "dog"}
+	d := Dog{name: "dog"}
 
-	var animals = []animal{&c, &d}
+	var animals = []Animal{&c, &d}
 
 	for _, animal := range animals {
 		animal.updateName()
