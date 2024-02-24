@@ -1,9 +1,9 @@
 package main
 
 import (
-	typeAssertion "interface/type_assertion"
+	"interface/embedded_structure"
 )
 
 func main() {
-	typeAssertion.ExampleTypeAssertion()
+	embedded_structure.EmbeddedStructureExample()
 }
